@@ -1,0 +1,85 @@
+.urlInputContainerwrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.urlInputContainer {
+    display: flex;
+    flex-direction: column;  /* Aligns children vertically */
+    justify-content: center; /* Centers children vertically */
+    align-items: center;     /* Centers children horizontally */
+    margin-top: 5em;
+    padding: 20px;
+    background: transparent;
+}
+
+.urlInputContainer h1 {
+    font-size: 4rem;
+    font-weight:900 ;
+    background: linear-gradient(90deg, #ff6ec4, #7873f5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0;
+}
+
+.urlInputContainer .quote {
+    text-align: center;
+    font-size: 0.8em;
+    width: 35em;
+    font-weight:lighter ;
+    margin: 0 auto;
+    margin-top: 1em;
+}
+
+.input-container {
+    margin-top: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50em;
+    padding: 0;
+    border: 0.1em solid #2d3443;
+    border-radius: 48px;
+    background: #0f1722;
+    overflow: hidden; /* Ensures children stay within the rounded corners */
+}
+
+.icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left:0.5em ;
+    padding: 0.5em;
+    font-size: 1.2rem;
+    color: #6c757d; /* Subtle gray color for the icon */
+}
+
+input[type="text"] {
+    flex: 1;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #fff; /* White text */
+}
+
+input[type="text"]::placeholder {
+    color: #6c757d; /* Subtle gray for placeholder */
+}
+
+.input-container button {
+    margin: 3px;
+    padding: 1em 1em;
+    background: #144EE3;
+    color: #fff;
+    font-size: 1rem;
+    border: none;
+    border-radius: 48px;
+    cursor: pointer;
+    transition: background 0.3s;
+    box-shadow: 2px 2px 10px #144EE3; /* Glow effect */
+}
+
+.input-container button:hover {
+    background: #285bdd;
+}

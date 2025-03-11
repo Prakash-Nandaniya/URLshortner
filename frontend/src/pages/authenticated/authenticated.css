@@ -1,0 +1,10 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #101224; 
+    color: white;
+    background-image: 
+        url('/src/assets/svgs/backgroundCubes.svg'), 
+        url('/src/assets/svgs/backgroundSwirl.svg'); 
+
+}

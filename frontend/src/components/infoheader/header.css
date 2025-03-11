@@ -1,0 +1,78 @@
+.url-info-header {
+    display: flex;
+    justify-content: center;
+    font-family: 'Inter';
+    font-weight: 200;
+    background: linear-gradient(89.92deg, #144EE3 -0.02%, #EB568E 18.86%, #A353AA 64.49%, #144EE3 100.67%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 8em;
+}
+
+.mainurls {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.mainurls .card {
+    width: 30vw;
+    padding: 1rem;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    /* Combine with shadow */
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    background-color: rgba(27, 27, 46, 0.3);
+}
+
+.mainurls .card:hover {
+    transform: translateY(-3px);
+    box-shadow: #08080a 0px 0px 40px;
+}
+
+
+.mainurls .card .label {
+    font-size: 2em;
+    margin: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #bd245c;
+}
+
+.mainurls .card .url {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.url a {
+    font-size: large;
+    text-decoration: none;
+    color: #204bb7;
+    padding: 10px;
+}
+
+.clicks {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.clicks .value {
+    font-size: 10em;
+    font-family: 'Cabin';
+    font-weight: extra-thin;
+    color: #94214b;
+    margin: 0;
+    margin-top: 10px;
+}
+
+.clicks .label {
+    font-size: 1.2em;
+    margin: 0;
+    margin-bottom: 10px;
+    color: #524b4e;
+}

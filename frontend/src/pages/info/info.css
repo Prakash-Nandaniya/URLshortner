@@ -1,0 +1,57 @@
+#url-info-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.chart-card {
+    margin: 0;
+    margin-top: 4vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.chart-card h5 {
+    font-size: 1.5vw;
+    font-weight: 100;
+    color: #94214b;
+    font-family: poppins sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+.app-container {
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+    /* Outer padding for the whole page */
+}
+
+/* Grid layout for pie charts */
+.pie-chart-grid {
+    background-color: transparent;
+    display: grid;
+    width: fit-content;
+    grid-template-columns: repeat(2, 1fr);
+    /* 4 columns */
+    gap: 100px;
+    /* Space between cards */
+}
+
+/* Responsive adjustment */
+@media (max-width: 1200px) {
+    .pie-chart-grid {
+        grid-template-columns: repeat(1, 1fr);
+        /* 2x2 grid on medium screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .pie-chart-grid {
+        grid-template-columns: 1fr;
+        /* Stack on small screens */
+    }
+}

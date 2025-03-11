@@ -1,0 +1,73 @@
+.map-card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4vw;
+}
+
+.map-card h5{
+  font-size: 1.5vw;
+  font-weight: 100;
+  color: #94214b;
+  font-family: poppins sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #101224;
+}
+
+.map-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: 600px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  margin: 20px auto;
+  background: none;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.map-container::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: radial-gradient(circle, rgba(16, 18, 36, 0.5) 0%, rgba(16, 18, 36, 0) 70%);
+  filter: blur(12px);
+  z-index: -1;
+  border-radius: 14px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.map-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 1);
+}
+
+.leaflet-container {
+  background: #101224 !important;
+}
+
+/* New styling for reset button */
+.leaflet-control-reset button {
+  padding: 5px 10px;
+  font-size: 12px;
+  font-family: 'Poppins', sans-serif;
+  background: #252323;
+  color: #dfe6e9;
+  border: 1px solid #3e3e5b;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.leaflet-control-reset button:hover {
+  background: #1c1c1d;
+  border-color: #74b9ff;
+}

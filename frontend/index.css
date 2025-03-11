@@ -1,0 +1,331 @@
+/* General reset */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #101224; /* Match background color of screenshot */
+    color: white;
+
+    /* Add SVGs as a background */
+    background-image: 
+        url('/static/svgs/background_swirl.svg'), /* First SVG */
+        url('/static/svgs/bckground_cubes.svg'); /* Second SVG */
+
+}
+
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Space out elements */
+    align-items: center; /* Center vertically */
+    padding: 15px 30px; /* Padding for navbar */
+    background-color: transparent; /* Navbar background */
+}
+
+/* Site name styling */
+#sitename {
+    font-size: 1.8rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, #ff0080, #8000ff); /* Gradient text */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+}
+
+/* Auth buttons container */
+.authbuttons {
+    display: flex;
+    gap: 15px; /* Spacing between buttons */
+}
+
+/* Button styling */
+.authbuttons button {
+    display: flex;
+    align-items: center; /* Center icon and text vertically */
+    gap: 8px; /* Space between text and icon */
+    padding: 10px 20px; /* Button padding */
+    border: none;
+    border-radius: 20px; /* Rounded buttons */
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Login button */
+#login {
+    background-color: #21262d; /* Dark button background */
+    color: #c9d1d9; /* Light text color */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    border: 0.001em solid grey;
+}
+
+#login:hover {
+    background-color: #2d333b; /* Slightly lighter on hover */
+}
+
+/* Register button */
+#signup {
+    background-color: #238636; /* Blue gradient button */
+    color: white;
+    box-shadow: 0 4px 10px rgba(35, 134, 54, 0.5); /* Glow effect */
+}
+
+#signup:hover {
+    background-color: #2ea043; /* Darker green on hover */
+}
+
+/* Icon styling inside buttons */
+.authbuttons img {
+    width: 16px;
+    height: 16px;
+}
+
+
+.urlInputContainerwrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.urlInputContainer {
+    display: flex;
+    flex-direction: column;  /* Aligns children vertically */
+    justify-content: center; /* Centers children vertically */
+    align-items: center;     /* Centers children horizontally */
+    margin-top: 5em;
+    max-width: 50em;
+    padding: 20px;
+    background: transparent;
+}
+
+.urlInputContainer h1 {
+    font-size: 3rem;
+    font-weight:900 ;
+    background: linear-gradient(90deg, #ff6ec4, #7873f5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0;
+}
+
+.urlInputContainer .quote {
+    text-align: center;
+    font-size: 0.8em;
+    width: 35em;
+    font-weight:lighter ;
+    margin: 0 auto;
+    margin-top: 1em;
+}
+
+.input-container {
+    margin-top: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 35em;
+    padding: 0;
+    border: 0.1em solid #2d3443;
+    border-radius: 48px;
+    background: #0f1722;
+    overflow: hidden; /* Ensures children stay within the rounded corners */
+}
+
+.icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left:0.5em ;
+    padding: 0.5em;
+    font-size: 1.2rem;
+    color: #6c757d; /* Subtle gray color for the icon */
+}
+
+input[type="text"] {
+    flex: 1;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #fff; /* White text */
+}
+
+input[type="text"]::placeholder {
+    color: #6c757d; /* Subtle gray for placeholder */
+}
+
+.input-container button {
+    margin: 3px;
+    padding: 1em 1em;
+    background: #144EE3;
+    color: #fff;
+    font-size: 1rem;
+    border: none;
+    border-radius: 48px;
+    cursor: pointer;
+    transition: background 0.3s;
+    box-shadow: 2px 2px 10px #144EE3; /* Glow effect */
+}
+
+.input-container button:hover {
+    background: #285bdd;
+}
+
+.history-header-container {
+    display: flex;
+    justify-content: center;
+}
+
+.history-header-row-container{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 70vw;
+    height: 4em;
+    background-color: #181E29;
+    border-top-left-radius:5px ;
+    border-top-right-radius:5px ;
+    margin-top: 1em;
+}
+.history-header-row-container h1{
+    font-family: 'Inter', sans-serif; 
+    font-weight: bold;
+    font-size: 14px; 
+    color: #C9CED6;
+}
+.history-header-shorturl-container{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 32vw;
+    padding: 1em;
+    gap: 0.5em;
+}
+.history-header-originalurl-container{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 30vw;
+    padding: 1em;
+    margin-left: 4em;
+}
+.history-header-clicks{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 10vw;
+    padding: 1em;
+}
+.history-header-buttons{
+    width: 25vw;
+    padding: 1em;
+}
+
+.history-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow: scroll; 
+    max-height: 50vh;
+}
+.history-container::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Edge */
+}
+
+.history-row-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 70vw;
+    height: 4em;
+    background-color: rgba(24, 30, 41, 0.22);
+    margin-top: 0.5em;
+}
+.history-shorturl-container{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 32vw;
+    padding: 1em;
+    gap: 0.5em;
+}
+.history-row-copy-button{
+    background: transparent;
+    border: none;
+}
+.history-originalurl-container{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 38vw;
+    padding: 1em;
+    gap: 0.5em;
+}
+.history-originalurl-image{
+    width: 2em;
+    height: 2em;
+}
+.history-row-container a{
+    font-family: 'Inter', sans-serif; 
+    font-weight: 300;
+    font-size: 14px; 
+    color: #C9CED6; 
+    text-decoration: none; 
+}
+.history-clicks{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 10vw;
+    padding: 1em;
+}
+.history-info-button, .history-delete-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10vw;
+    padding: 1em;
+}
+.history-info-button button, .history-delete-button button{
+    width: 5vw;
+    padding: 0.5em;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.history-delete-button button{
+    background-color: #dc3545; 
+}
+.history-delete-button button:hover {
+    background-color: #b52a37; 
+    box-shadow: 0px 0px 2px 1px #b52a37;
+
+}
+.history-info-button button{
+    background-color: #d66712; 
+}
+.history-info-button button:hover {
+    background-color: #a44e0c; 
+    box-shadow: 0px 0px 2px 1px #a44e0c;
+}
+
+
+
+/* Wrapper to position the glowing lines */
+.history-container-wrapper {
+    position: relative;
+    max-height: 50vh;
+    overflow: hidden;
+}
+.glow-bottom {
+    position: absolute;
+    bottom: 0; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 69vw; 
+    box-shadow: 0 0 10px 13px rgba(0, 0, 0, 0.5); 
+    pointer-events: none; 
+}
+.glow-bottom {
+    bottom: 0;
+}

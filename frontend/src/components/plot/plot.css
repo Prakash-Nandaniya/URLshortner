@@ -1,0 +1,75 @@
+.abc{
+    margin: 0;
+    margin: 3vw 1vw 0 1vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.abc h1{
+    font-size: 1.5vw;
+    font-weight: 100;
+    color: #94214b;
+    font-family: poppins sans-serif;
+    margin: 0;
+}
+
+.plot-header{
+    margin: 0;
+    margin-top: 3vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.graph-container {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    overflow-x: auto;
+    margin-top: 0;
+    padding: 20px;
+    background: none;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.graph-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: -1;
+}
+
+.time-interval-selector {
+    padding: 10px 15px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    background: rgba(32, 32, 50, 0.4);
+    color: #dfe6e9;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, border-color 0.3s ease;
+    width: 100%;
+    max-width: 200px;
+    margin-left: 40px;
+    /* Space below selector */
+}
+
+.time-interval-selector:hover{
+    background: rgba(56, 56, 94, 0.8);
+    outline: none;
+}
+
+/* Ensure Plotly fits the container */
+.plotly-graph {
+    width: 100%;
+    height: 400px;
+    /* Match Plotly layout height */
+}

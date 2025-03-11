@@ -1,0 +1,148 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: rgb(16, 18, 36); 
+    color: white;
+    background-image: 
+        url('/src/assets/svgs/backgroundCubes.svg'), 
+        url('/src/assets/svgs/backgroundSwirl.svg'); 
+
+}
+
+.page-container .servicetext{
+    font-size: 2rem;
+    font-weight: 100;
+    text-align: center;
+    margin: 0;
+    color: #9d276e;
+    margin-top: 5rem;
+}
+
+/* Reset default margins */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Services section below Searchbox */
+.services-section {
+    position: relative;
+    padding: 2rem;
+    padding-top: 150px; /* Space below Searchbox - adjust based on Searchbox height */
+    min-height: 200vh; /* Tall enough to fit large mainpagecards */
+}
+
+/* mainpagecard styling */
+.mainpagecard {
+    position: absolute;
+    width: 35%; 
+    aspect-ratio: 1/1; 
+    border-radius: 16px;
+    overflow: hidden;
+    background: transparent;
+    margin-top: 0;
+}
+
+/* Zigzag placement from top to bottom */
+.mainpagecard-1 {
+    top: 5%;
+    left: 10%;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.mainpagecard-2 {
+    top: 5%;
+    right: 10%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.mainpagecard-3 {
+    top: 45%;
+    left: 10%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Pink glow */
+}
+
+.mainpagecard-4 {
+    top: 45%;
+    right: 10%;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* mainpagecard image */
+.mainpagecard-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(100%); /* Darken for text readability */
+    filter: opacity(1); /* Semi-transparent */
+}
+
+/* mainpagecard text overlay */
+.mainpagecard-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(16, 18, 36,0.5); /* Semi-transparent overlay, no blur */
+}
+
+.mainpagecard-overlay p {
+    background: linear-gradient(90deg, #ff6ec4, #7873f5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2rem; /* Larger text for bigger mainpagecards */
+    font-weight: 300; /* Thin text */
+    text-align: center;
+    padding: 1.5rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Hover effect */
+.mainpagecard:hover {
+    transform: scale(1.03); /* Smaller scale due to large size */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Ensure Navbar and Searchbox stay above mainpagecards */
+.navbar, .searchbox {
+    position: relative;
+    z-index: 10;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .mainpagecard {
+        width: 700px; /* Adjusted for medium screens */
+        height: 490px;
+    }
+    .mainpagecard-overlay p {
+        font-size: 1.6rem;
+    }
+    .mainpagecard-1 { top: 0; left: 5%; }
+    .mainpagecard-2 { top: 25%; right: 5%; }
+    .mainpagecard-3 { top: 50%; left: 10%; }
+    .mainpagecard-4 { top: 75%; right: 10%; }
+}
+
+@media (max-width: 768px) {
+    .mainpagecard {
+        width: 500px; /* Further reduced for small screens */
+        height: 350px;
+    }
+    .mainpagecard-overlay p {
+        font-size: 1.2rem;
+    }
+    .services-section {
+        padding-top: 100px; /* Less space on smaller screens */
+    }
+    .mainpagecard-1 { top: 0; left: 5%; }
+    .mainpagecard-2 { top: 30%; right: 5%; }
+    .mainpagecard-3 { top: 60%; left: 10%; }
+    .mainpagecard-4 { top: 90%; right: 10%; }
+}

@@ -1,0 +1,32 @@
+.stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 10rem;
+    padding: 2rem 0;
+    background-color: transparent;
+}
+
+.stat {
+    display: flex;
+    gap: 0.7rem;
+}
+
+.stats-container .stat .stat-value {
+    font-family: 'Poppins', sans-serif; /* Modern, clean font */
+    font-size: 3rem; /* Large and bold */
+    font-weight: 500; 
+    color: #4CAF50; /* Green color for a positive vibe */
+}
+
+.stats-container .stat .stat-label {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #676262;
+    margin-bottom: 3rem;
+    align-self: flex-end;
+}
+
+.stats-container .stat .stat-value:hover {
+    transform: scale(1.2);
+    transition: transform 0.2s ease-in-out;
+}

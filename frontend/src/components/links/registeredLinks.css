@@ -1,0 +1,180 @@
+.history-container-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.history-header-container {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: #181e29;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.history-header-row-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 4em;
+  padding: 0 1vw;
+}
+
+.history-header-row-container h1 {
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  color: #c9ced6;
+}
+
+.history-header-shorturl-container,
+.history-shorturl-container {
+  display: flex;
+  flex: 3;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5vw;
+
+}
+
+.history-header-originalurl-container,
+.history-originalurl-container {
+  flex: 3;
+  display: flex;
+  align-items: center;
+  padding: 0.5vw;
+  gap: 0.5vw;
+}
+
+.history-header-originalurl-container {
+  margin-left: 13vw;
+}
+
+.history-header-clicks,
+.history-clicks {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 0.5vw;
+}
+
+.history-header-clicks {
+  margin-left: 8vw;
+}
+
+.history-header-buttons {
+  flex: 2;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.5vw;
+}
+
+.history-container {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.history-container::-webkit-scrollbar {
+  display: none;
+}
+
+.history-row-container {
+  display: flex;
+  align-items: center;
+  background-color: rgba(24, 30, 41, 0.22);
+  margin-top: 0.5em;
+  padding: 0 1vw;
+  height: 4em;
+  justify-content: space-between;
+}
+
+.history-row-copy-button {
+  margin-right: 7rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  flex: 0 0 35px;
+}
+
+.history-row-copy-button:hover {
+  cursor: pointer;
+}
+
+.copySVGreact:active {
+  fill: rgb(255, 255, 255);
+  transition: fill 0.2s ease-in-out;
+}
+
+.history-originalurl-image {
+  width: 2vw;
+  height: 2em;
+}
+
+.history-row-container a {
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  color: #c9ced6;
+  text-decoration: none;
+}
+
+.history-info-button,
+.history-delete-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5vw;
+}
+
+.history-info-button button,
+.history-delete-button button {
+  width: 100%;
+  max-width: 100px;
+  padding: 0.5vw;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.history-delete-button button {
+  background-color: #dc3545;
+}
+
+.history-delete-button button:hover {
+  background-color: #b52a37;
+  box-shadow: 0px 0px 2px 1px #b52a37;
+}
+
+.history-info-button button {
+  background-color: #d66712;
+}
+
+.history-info-button button:hover {
+  background-color: #a44e0c;
+  box-shadow: 0px 0px 2px 1px #a44e0c;
+}
+
+.glow-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.2), transparent);
+  pointer-events: none;
+}
+
+
+
+.copySVGreact:active {
+  fill: rgb(171, 69, 69);
+  transition: fill 0.2s ease-in-out;
+}

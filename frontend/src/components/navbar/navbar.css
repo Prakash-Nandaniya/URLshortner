@@ -1,0 +1,92 @@
+.navbar {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 15px 30px; 
+    background-color: transparent; 
+}
+
+#sitename {
+    font-size: 1.8rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, #ff0080, #8000ff); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+}
+
+.authbuttons {
+    display: flex;
+    gap: 15px; 
+}
+
+.authbuttons button {
+    display: flex;
+    align-items: center; 
+    gap: 8px; 
+    padding: 10px 20px; 
+    border: none;
+    border-radius: 20px; 
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#login {
+    background-color: #21262d; 
+    color: #c9d1d9; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+    border: 0.001em solid grey;
+}
+
+#login:hover {
+    background-color: #2d333b; 
+}
+
+#signup {
+    background-color: #238636; 
+    color: white;
+    box-shadow: 0 4px 10px rgba(35, 134, 54, 0.5); 
+}
+
+#signup:hover {
+    background-color: #2ea043; 
+}
+
+.authbuttons img {
+    width: 16px;
+    height: 16px;
+}
+
+.custom-dropdown {
+    background: linear-gradient(90deg, #1c1d24, #07071d); 
+    padding: 10px;
+    width: 9rem;
+    border-radius: 25px;
+    border: solid 0.1px #252323; 
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .custom-dropdown-welcome {
+    font-size: 10px;
+    font-weight: 400;
+    color: #bbbbbb; 
+    margin: 0px;
+    padding: 0;
+    margin-left: 10px;
+  }
+  
+  .custom-dropdown-name {
+    font-size: 16px;
+    font-weight: 400;
+    color: #ffffff; 
+    margin-left: 10px;
+  }
+  
+  .navbar .authbuttons a {
+    text-decoration: none;  
+}
+  
