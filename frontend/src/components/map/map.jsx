@@ -38,6 +38,7 @@ const ResetViewControl = () => {
 };
 
 const Map = ({ coordinates = [] }) => {
+  const MAP_API_KEY = import.meta.env.VITE_MAP_API_KEY;
   return (
     <div className="map-card">
       <h5>IP locations</h5>
@@ -52,7 +53,7 @@ const Map = ({ coordinates = [] }) => {
           attributionControl={false} // Remove attribution control
         >
           <TileLayer
-            url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
+            url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png?api_key=MAP_API_KEY"
             attribution='© <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> © <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             opacity={0.5}
           />
