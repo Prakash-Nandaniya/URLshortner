@@ -1,5 +1,5 @@
 import './registeredLinks.css';
-import Linksheader from './linksHeader';
+import Linksheader from './linksHeader.jsx';
 import OneLink from './link.jsx';
 import React from 'react';
 

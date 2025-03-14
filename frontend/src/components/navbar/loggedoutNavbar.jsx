@@ -10,7 +10,7 @@ function Navbar() {
             </h4>
             <div className="authbuttons">
                 <Link to="/login">
-                    <button id="login">Login <img src="src/assets/svgs/login.svg" alt="login" /></button>
+                    <button id="login">Login <img src="/svgs/login.svg" alt="login" /></button>
                 </Link>
                 <Link to="/signup">
                     <button id="signup">Register Now</button>
