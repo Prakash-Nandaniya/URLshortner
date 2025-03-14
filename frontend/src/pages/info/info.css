@@ -1,57 +1,58 @@
 #url-info-container {
-    padding: 20px;
+    padding: 2%; /* Percentage-based padding */
     font-family: Arial, sans-serif;
+    width: 100%;
 }
 
 .chart-card {
     margin: 0;
-    margin-top: 4vw;
+    margin-top: 4%; /* Percentage-based margin */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .chart-card h5 {
-    font-size: 1.5vw;
+    font-size: clamp(1%, 1.5vw, 2%); /* Scales with viewport */
     font-weight: 100;
     color: #94214b;
-    font-family: poppins sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
 }
-
 
 .app-container {
     background-color: transparent;
     display: flex;
     justify-content: center;
-    padding: 40px;
-    /* Outer padding for the whole page */
+    padding: 4%; /* Percentage-based padding */
+    width: 100%;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
 }
 
 /* Grid layout for pie charts */
 .pie-chart-grid {
     background-color: transparent;
     display: grid;
-    width: fit-content;
+    width: 90%; /* Scaled percentage */
+    max-width: 100%; /* Flexible max-width */
     grid-template-columns: repeat(2, 1fr);
-    /* 4 columns */
-    gap: 100px;
-    /* Space between cards */
+    gap: 5%; /* Percentage-based gap */
 }
 
 /* Responsive adjustment */
 @media (max-width: 1200px) {
     .pie-chart-grid {
         grid-template-columns: repeat(1, 1fr);
-        /* 2x2 grid on medium screens */
+        gap: 3%; /* Smaller gap */
     }
 }
 
 @media (max-width: 600px) {
     .pie-chart-grid {
         grid-template-columns: 1fr;
-        /* Stack on small screens */
+        gap: 2%; /* Even smaller gap */
     }
 }

@@ -1,92 +1,151 @@
+/* Base navbar styles (horizontal layout preserved) */
 .navbar {
     display: flex;
-    justify-content: space-between; 
-    align-items: center; 
-    padding: 15px 30px; 
-    background-color: transparent; 
+    justify-content: space-between;
+    align-items: center;
+    padding: clamp(0.75rem, 2vw, 1rem) clamp(1rem, 3vw, 2rem);
+    background-color: transparent;
+    width: 100%;
 }
 
+/* Site name */
 #sitename {
-    font-size: 1.8rem;
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
     font-weight: bold;
-    background: linear-gradient(90deg, #ff0080, #8000ff); 
+    background: linear-gradient(90deg, #ff0080, #8000ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin: 0;
 }
 
+/* Auth buttons container */
 .authbuttons {
     display: flex;
-    gap: 15px; 
+    flex-direction: row;
+    /* Always horizontal */
+    gap: clamp(0.5rem, 1.5vw, 1rem); 
+    align-items: center;
 }
 
+/* Button base styles */
 .authbuttons button {
     display: flex;
-    align-items: center; 
-    gap: 8px; 
-    padding: 10px 20px; 
+    align-items: center;
+    justify-content: center;
+    gap: clamp(0.375rem, 1vw, 0.5rem);
+    padding: clamp(0.5rem, 1.5vw, 0.625rem) clamp(0.75rem, 2vw, 1.25rem);
     border: none;
-    border-radius: 20px; 
-    font-size: 1rem;
+    border-radius: 20px;
+    font-size: clamp(0.875rem, 2vw, 1rem);
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
+/* Login button */
 #login {
-    background-color: #21262d; 
-    color: #c9d1d9; 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
-    border: 0.001em solid grey;
+    background-color: #21262d;
+    color: #c9d1d9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border: 0.001rem solid grey;
 }
 
 #login:hover {
-    background-color: #2d333b; 
+    background-color: #2d333b;
 }
 
+/* Signup button */
 #signup {
-    background-color: #238636; 
+    background-color: #238636;
     color: white;
-    box-shadow: 0 4px 10px rgba(35, 134, 54, 0.5); 
+    box-shadow: 0 4px 10px rgba(35, 134, 54, 0.5);
 }
 
 #signup:hover {
-    background-color: #2ea043; 
+    background-color: #2ea043;
 }
 
+/* Button icons */
 .authbuttons img {
-    width: 16px;
-    height: 16px;
+    width: clamp(12px, 2vw, 16px);
+    height: clamp(12px, 2vw, 16px);
 }
 
+/* Custom dropdown */
 .custom-dropdown {
-    background: linear-gradient(90deg, #1c1d24, #07071d); 
-    padding: 10px;
-    width: 9rem;
+    background: linear-gradient(90deg, #1c1d24, #07071d);
+    padding: clamp(0.5rem, 1vw, 0.625rem);
+    width: clamp(6rem, 15vw, 9rem);
     border-radius: 25px;
-    border: solid 0.1px #252323; 
-    display: inline-flex;
+    border: solid 0.1px #252323;
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
-  }
-  
-  .custom-dropdown-welcome {
-    font-size: 10px;
-    font-weight: 400;
-    color: #bbbbbb; 
-    margin: 0px;
-    padding: 0;
-    margin-left: 10px;
-  }
-  
-  .custom-dropdown-name {
-    font-size: 16px;
-    font-weight: 400;
-    color: #ffffff; 
-    margin-left: 10px;
-  }
-  
-  .navbar .authbuttons a {
-    text-decoration: none;  
 }
-  
+
+/* Dropdown welcome text */
+.custom-dropdown-welcome {
+    font-size: clamp(8px, 1.5vw, 10px);
+    font-weight: 400;
+    color: #bbbbbb;
+    margin: 0;
+    padding: 0;
+    margin-left: clamp(0.375rem, 1vw, 0.625rem);
+}
+
+/* Dropdown name */
+.custom-dropdown-name {
+    font-size: clamp(12px, 2vw, 16px);
+    font-weight: 400;
+    color: #ffffff;
+    margin-left: clamp(0.375rem, 1vw, 0.625rem);
+}
+
+/* Links in authbuttons */
+.navbar .authbuttons a {
+    text-decoration: none;
+}
+
+/* Desktop adjustments (min-width: 768px) */
+@media (min-width: 768px) {
+    .navbar {
+        padding: 1rem 2rem;
+    }
+
+    .authbuttons {
+        gap: 1rem;
+    }
+
+    .authbuttons button {
+        padding: 0.625rem 1.25rem;
+    }
+}
+
+/* Small screens (mobile adjustments) */
+@media (max-width: 767px) {
+    .navbar {
+        padding: 0.75rem 1rem;
+    }
+
+    .authbuttons {
+        gap: 0.5rem;
+    }
+
+    /* Make login and signup buttons smaller on mobile */
+    #login,
+    #signup {
+        padding: 0.375rem 0.625rem;
+        /* Smaller padding */
+        font-size: clamp(0.75rem, 2vw, 0.875rem);
+        /* Smaller font size */
+    }
+
+    .authbuttons button {
+        padding: 0.5rem 0.75rem;
+        /* Default for other buttons, if any */
+    }
+
+    .custom-dropdown {
+        width: clamp(5rem, 15vw, 7rem);
+    }
+}

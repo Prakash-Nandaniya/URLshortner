@@ -1,84 +1,78 @@
-body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: rgb(16, 18, 36); 
-    color: white;
-    background-image: 
-        url('/svgs/backgroundCubes.svg'), 
-        url('/svgs/backgroundSwirl.svg'); 
-
-}
-
-.page-container .servicetext{
-    font-size: 2rem;
-    font-weight: 100;
-    text-align: center;
-    margin: 0;
-    color: #9d276e;
-    margin-top: 5rem;
-}
-
-/* Reset default margins */
+/* Reset default margins and set box-sizing */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Services section below Searchbox */
-.services-section {
-    position: relative;
-    padding: 2rem;
-    padding-top: 150px; /* Space below Searchbox - adjust based on Searchbox height */
-    min-height: 200vh; /* Tall enough to fit large mainpagecards */
+/* Base body styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: rgb(16, 18, 36);
+    color: white;
+    background-image:
+        url('/svgs/backgroundCubes.svg'),
+        url('/svgs/backgroundSwirl.svg');
+    background-size: cover;
+    /* Scales background to fit */
+    background-position: center;
+    min-height: 100vh;
+    /* Ensures full height */
 }
 
-/* mainpagecard styling */
+/* Page container servicetext */
+.page-container .servicetext {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    padding: 1rem;
+    /* Scales from 1.5rem to 2rem */
+    font-weight: 300;
+    text-align: center;
+    background: linear-gradient(90deg, #e35fae, #6662d9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 2rem;
+    /* Reduced for mobile, scales up */
+}
+
+/* Services section */
+.services-section {
+    position: relative;
+    padding: 1rem;
+    /* Scales padding-top */
+    min-height: 100vh;
+    /* Reduced to fit content, adjusts with cards */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Mainpagecard base styles */
 .mainpagecard {
-    position: absolute;
-    width: 35%; 
-    aspect-ratio: 1/1; 
+    position: relative;
+    /* Changed from absolute for better stacking */
+    width: 90%;
+    /* Default for mobile */
+    max-width: 35rem;
+    /* Caps width for larger screens */
+    aspect-ratio: 1/1;
     border-radius: 16px;
     overflow: hidden;
     background: transparent;
-    margin-top: 0;
+    margin: 1rem 0;
+    /* Vertical spacing for stacking */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Zigzag placement from top to bottom */
-.mainpagecard-1 {
-    top: 5%;
-    left: 10%;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-}
-
-.mainpagecard-2 {
-    top: 5%;
-    right: 10%;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-}
-
-.mainpagecard-3 {
-    top: 45%;
-    left: 10%;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Pink glow */
-}
-
-.mainpagecard-4 {
-    top: 45%;
-    right: 10%;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
-}
-
-/* mainpagecard image */
+/* Mainpagecard image */
 .mainpagecard-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(100%); /* Darken for text readability */
-    filter: opacity(1); /* Semi-transparent */
+    filter: brightness(150%) opacity(1)  saturate(100%);
+    /* Combined filters */
 }
 
-/* mainpagecard text overlay */
+/* Mainpagecard overlay */
 .mainpagecard-overlay {
     position: absolute;
     top: 0;
@@ -88,61 +82,96 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgb(16, 18, 36,0.5); /* Semi-transparent overlay, no blur */
+    background: rgba(16, 18, 36, 0.5);
+    /* Semi-transparent overlay */
 }
 
+/* Overlay text */
 .mainpagecard-overlay p {
-    background: linear-gradient(90deg, #ff6ec4, #7873f5);
+    background: linear-gradient(90deg, #d158a1, #4c48bd);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 2rem; /* Larger text for bigger mainpagecards */
-    font-weight: 300; /* Thin text */
+    font-size: clamp(1rem, 4vw, 2rem);
+    /* Scales text */
+    font-weight: 100;
     text-align: center;
-    padding: 1.5rem;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    /* Reduced padding */
 }
+
 
 /* Hover effect */
 .mainpagecard:hover {
-    transform: scale(1.03); /* Smaller scale due to large size */
+    transform: scale(1.03);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Ensure Navbar and Searchbox stay above mainpagecards */
-.navbar, .searchbox {
+/* Ensure Navbar and Searchbox stay above */
+.navbar,
+.searchbox {
     position: relative;
     z-index: 10;
 }
 
-/* Responsive adjustments */
-@media (max-width: 1200px) {
+/* Desktop layout (min-width: 768px) */
+@media (min-width: 768px) {
+    .services-section {
+        padding: 2%;
+        padding-top: 15%;
+    }
+
     .mainpagecard {
-        width: 700px; /* Adjusted for medium screens */
-        height: 490px;
+        position: absolute;
+        width: clamp(20%, 35vw, 35%); /* Dynamic width */
+        height: clamp(20%, 35vw, 35%); /* Dynamic height */
     }
-    .mainpagecard-overlay p {
-        font-size: 1.6rem;
+
+    /* Zigzag placement with dynamic spacing */
+    .mainpagecard-1 {
+        top: 5%;
+        left: 10%;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
     }
-    .mainpagecard-1 { top: 0; left: 5%; }
-    .mainpagecard-2 { top: 25%; right: 5%; }
-    .mainpagecard-3 { top: 50%; left: 10%; }
-    .mainpagecard-4 { top: 75%; right: 10%; }
+
+    .mainpagecard-2 {
+        top: 5%;
+        right: 10%;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .mainpagecard-3 {
+        top: calc(5% + clamp(20%, 35vw, 35%) + 5%); /* Dynamic top position */
+        left: 10%;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .mainpagecard-4 {
+        top: calc(5% + clamp(20%, 35vw, 35%) + 5%); /* Matches mainpagecard-3 */
+        right: 10%;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .page-container .servicetext {
+        margin-top: 5%;
+    }
 }
 
-@media (max-width: 768px) {
-    .mainpagecard {
-        width: 500px; /* Further reduced for small screens */
-        height: 350px;
+/* Small screens (mobile adjustments) */
+@media (max-width: 767px) {
+    .services-section {
+        padding-top: 100px;
+        /* Reduced for mobile */
     }
+
+    .mainpagecard {
+        width: 85%;
+        /* Slightly smaller for mobile padding */
+        max-width: 25rem;
+        /* Cap for small screens */
+    }
+
     .mainpagecard-overlay p {
         font-size: 1.2rem;
+        /* Smaller text for mobile */
     }
-    .services-section {
-        padding-top: 100px; /* Less space on smaller screens */
-    }
-    .mainpagecard-1 { top: 0; left: 5%; }
-    .mainpagecard-2 { top: 30%; right: 5%; }
-    .mainpagecard-3 { top: 60%; left: 10%; }
-    .mainpagecard-4 { top: 90%; right: 10%; }
 }

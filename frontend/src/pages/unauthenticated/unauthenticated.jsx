@@ -34,7 +34,7 @@ function Unauthenticated() {
             <div className="page-container">
                 <Navbar />
                 <Searchbox />
-                <hr style={{"margin-top":"100px", "width":"60%","margin-left":"20%"}} />
+                <hr style={{"margin-top":"1rem", "width":"70%","margin-left":"15%"}} />
                 <h1 className='servicetext'>Signup and get following services in free</h1>
                 <div className="services-section">
                     <div className="mainpagecard mainpagecard-1">

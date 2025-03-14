@@ -1,85 +1,141 @@
+/* Wrapper for centering */
 .urlInputContainerwrapper {
     display: flex;
     justify-content: center;
-}
-
-.urlInputContainer {
+    width: 100%;
+  }
+  
+  /* Main container */
+  .urlInputContainer {
     display: flex;
-    flex-direction: column;  /* Aligns children vertically */
-    justify-content: center; /* Centers children vertically */
-    align-items: center;     /* Centers children horizontally */
-    margin-top: 5em;
-    padding: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: clamp(2rem, 5vh, 5rem); /* Scales margin-top */
+    padding: 1rem; /* Reduced base padding for mobile */
     background: transparent;
-}
-
-.urlInputContainer h1 {
-    font-size: 4rem;
-    font-weight:900 ;
+    width: 100%;
+    max-width: 1200px; /* Caps width for large screens */
+  }
+  
+  /* Heading */
+  .urlInputContainer h1 {
+    font-size: clamp(2rem, 8vw, 4rem); /* Scales from 2rem to 4rem */
+    font-weight: 900;
     background: linear-gradient(90deg, #ff6ec4, #7873f5);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 0;
-}
-
-.urlInputContainer .quote {
+    text-align: center; /* Ensures centering on all screens */
+  }
+  
+  /* Quote */
+  .urlInputContainer .quote {
     text-align: center;
-    font-size: 0.8em;
-    width: 35em;
-    font-weight:lighter ;
-    margin: 0 auto;
-    margin-top: 1em;
-}
-
-.input-container {
-    margin-top: 1em;
+    font-size: clamp(0.7rem, 2.5vw, 0.8rem); /* Scales font size */
+    width: 90%; /* Relative width for mobile */
+    max-width: 35rem; /* Caps width for desktop */
+    font-weight: lighter;
+    margin: 1rem auto 0; /* Simplified margin */
+  }
+  
+  /* Input container */
+  .input-container {
+    margin-top: 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 50em;
+    width: 90%; /* Relative width for mobile */
+    max-width: 50rem; /* Caps width for desktop */
     padding: 0;
-    border: 0.1em solid #2d3443;
+    border: 0.1rem solid #2d3443;
     border-radius: 48px;
     background: #0f1722;
-    overflow: hidden; /* Ensures children stay within the rounded corners */
-}
-
-.icon-container {
+    overflow: hidden;
+  }
+  
+  /* Icon container */
+  .icon-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left:0.5em ;
-    padding: 0.5em;
-    font-size: 1.2rem;
-    color: #6c757d; /* Subtle gray color for the icon */
-}
-
-input[type="text"] {
+    margin-left: 0.5rem;
+    padding: 0.5rem;
+    font-size: clamp(1rem, 3vw, 1.2rem); /* Scales icon size */
+    color: #6c757d;
+  }
+  
+  /* Input field */
+  input[type="text"] {
     flex: 1;
-    font-size: 1rem;
+    font-size: clamp(0.875rem, 2.5vw, 1rem); /* Scales font size */
     border: none;
     outline: none;
     background: transparent;
-    color: #fff; /* White text */
-}
-
-input[type="text"]::placeholder {
-    color: #6c757d; /* Subtle gray for placeholder */
-}
-
-.input-container button {
-    margin: 3px;
-    padding: 1em 1em;
+    color: #fff;
+    padding: 0.5rem; /* Added padding for better touch area */
+  }
+  
+  input[type="text"]::placeholder {
+    color: #6c757d;
+  }
+  
+  /* Button */
+  .input-container button {
+    margin: 0.1875rem; /* Slightly reduced from 3px */
+    padding: clamp(0.5rem, 2vw, 1rem); /* Scales padding */
     background: #144EE3;
     color: #fff;
-    font-size: 1rem;
+    font-size: clamp(0.875rem, 2.5vw, 1rem); /* Scales font size */
     border: none;
     border-radius: 48px;
     cursor: pointer;
     transition: background 0.3s;
-    box-shadow: 2px 2px 10px #144EE3; /* Glow effect */
-}
-
-.input-container button:hover {
+    box-shadow: 2px 2px 10px #144EE3;
+  }
+  
+  /* Button hover */
+  .input-container button:hover {
     background: #285bdd;
-}
+  }
+  
+  /* Responsive adjustments for larger screens */
+  @media (min-width: 768px) {
+    .urlInputContainer {
+      padding: 2rem; /* Larger padding for desktop */
+    }
+  
+    .input-container {
+      width: 80%; /* Slightly narrower for desktop */
+    }
+  }
+  
+  /* Small screens (mobile adjustments) */
+  @media (max-width: 767px) {
+    .urlInputContainer {
+      margin-top: 2rem; /* Reduced for mobile */
+    }
+  
+    .input-container {
+      flex-direction: column; /* Stack icon, input, and button on mobile */
+      width: 95%; /* Nearly full width */
+      border-radius: 24px; /* Slightly smaller radius */
+      padding: 0.5rem; /* Inner padding for spacing */
+    }
+  
+    .icon-container {
+      margin-left: 0;
+      margin-bottom: 0.5rem; /* Space below icon */
+    }
+  
+    input[type="text"] {
+      width: 100%; /* Full width within container */
+      text-align: center; /* Center text on mobile */
+    }
+  
+    .input-container button {
+      width: 100%; /* Full width button */
+      margin: 0.5rem 0 0; /* Space above button */
+      border-radius: 24px; /* Match container */
+    }
+  }

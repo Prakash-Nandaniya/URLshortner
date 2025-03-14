@@ -16,13 +16,13 @@ const formatNumber = (num) => {
 function Bottom({ stats }) {
   return (
     <div className="stats-container">
-      <div className="stat">
+      <div className="stat one">
         <h2 className="stat-value">{formatNumber(stats.totalRegisteredLinks)}</h2>
         <p className="stat-label">Registered Links</p>
       </div>
-      <div className="stat">
+      <div className="stat two">
         <h2 className="stat-value">{formatNumber(stats.totalClicks)}</h2>
-        <p className="stat-label">Clicks</p>
+        <p className="stat-label">Total Clicks</p>
       </div>
     </div>
   );

@@ -1,15 +1,16 @@
-.map-card{
+.map-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 4vw;
+  margin-top: 4%;
+  width: 100%;
 }
 
-.map-card h5{
-  font-size: 1.5vw;
+.map-card h5 {
+  font-size: clamp(1rem, 1.5vw, 2rem); /* Scales with viewport */
   font-weight: 100;
   color: #94214b;
-  font-family: poppins sans-serif;
+  font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -21,11 +22,11 @@ body {
 .map-container {
   position: relative;
   width: 100%;
-  max-width: 1200px;
-  height: 600px;
+  max-width: 95%; /* Scaled percentage */
+  height: 80vh; /* Percentage-based height */
   overflow-x: hidden;
   overflow-y: hidden;
-  margin: 20px auto;
+  margin: 2% auto; /* Percentage-based margin */
   background: none;
   border-radius: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -34,10 +35,10 @@ body {
 .map-container::before {
   content: '';
   position: absolute;
-  top: -10px;
-  left: -10px;
-  right: -10px;
-  bottom: -10px;
+  top: -1%;
+  left: -1%;
+  right: -1%;
+  bottom: -1%;
   background: radial-gradient(circle, rgba(16, 18, 36, 0.5) 0%, rgba(16, 18, 36, 0) 70%);
   filter: blur(12px);
   z-index: -1;
@@ -56,8 +57,8 @@ body {
 
 /* New styling for reset button */
 .leaflet-control-reset button {
-  padding: 5px 10px;
-  font-size: 12px;
+  padding: 1% 2%; /* Percentage-based padding */
+  font-size: clamp(10px, 1.5vw, 12px); /* Scales with viewport */
   font-family: 'Poppins', sans-serif;
   background: #252323;
   color: #dfe6e9;
@@ -70,4 +71,24 @@ body {
 .leaflet-control-reset button:hover {
   background: #1c1c1d;
   border-color: #74b9ff;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .map-container {
+    height: 50vh; /* Smaller height on mobile */
+    margin: 3% auto;
+  }
+
+  .map-card {
+    margin-top: 5%;
+  }
+}
+
+/* Desktop adjustments */
+@media (min-width: 769px) {
+  .map-container {
+    height: 80vh;
+    max-width: 95%;
+  }
 }

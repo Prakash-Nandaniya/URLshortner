@@ -1,7 +1,7 @@
 .login-container {
-    max-width: 400px;
-    margin: 100px auto;
-    padding: 20px;
+    width: 80vw;
+    margin: 10% auto; /* Relative margin */
+    padding: 2%; /* Relative padding */
     border-radius: 8px;
     backdrop-filter: blur(10px);
     background-color: rgba(0, 0, 0, 0.5);
@@ -11,17 +11,17 @@
 h2 {
     color: rgb(228, 208, 208);
     text-align: center;
-    font-size: 24px;
-    margin-bottom: 20px;
+    font-size: 2.5%; /* Relative font size */
+    margin-bottom: 2%; /* Relative margin */
 }
 
 .input-group {
-    margin-bottom: 15px;
+    margin-bottom: 2%; /* Relative margin */
 }
 
 .input-group label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 1%; /* Relative margin */
 }
 
 input[type="password"] {
@@ -30,11 +30,10 @@ input[type="password"] {
     background-color: transparent; 
 }
 
-
 .input-group input {
     width: 80%;
-    padding: 10px;
-    font-size: 16px;
+    padding: 1.5%; /* Relative padding */
+    font-size: 1.5%; /* Relative font size */
     border: none;
     border-bottom: 2px solid #1b1919;
     border-radius: 0;
@@ -48,10 +47,10 @@ input[type="password"] {
 
 button.login-btn {
     width: 70%;
-    padding: 10px;
+    padding: 1.5%; /* Relative padding */
     background-color: #0b233e;
     color: rgb(228, 208, 208);
-    font-size: 16px;
+    font-size: 1.5%; /* Relative font size */
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -65,7 +64,7 @@ button.login-btn:hover {
 
 .signup-link {
     text-align: center;
-    margin-top: 15px;
+    margin-top: 2%; /* Relative margin */
 }
 
 .signup-link #Link {

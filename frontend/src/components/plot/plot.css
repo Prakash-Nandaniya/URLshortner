@@ -1,38 +1,41 @@
-.abc{
-    margin: 0;
-    margin: 3vw 1vw 0 1vw;
+.abc {
+    margin: 3% 1% 0 1%; /* Percentage-based margin */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
-.abc h1{
-    font-size: 1.5vw;
+.abc h1 {
+    font-size: clamp(1rem, 1.5vw, 2rem); /* Scales with viewport */
     font-weight: 100;
     color: #94214b;
-    font-family: poppins sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
 }
 
-.plot-header{
+.plot-header {
     margin: 0;
-    margin-top: 3vw;
+    margin-top: 3%; /* Percentage-based margin */
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .graph-container {
     display: flex;
     flex-direction: column;
-    width: fit-content;
+    width: 90%; /* Scaled percentage */
+    max-width: 100%; /* Flexible max-width */
     overflow-x: auto;
     margin-top: 0;
-    padding: 20px;
+    padding: 2%; /* Percentage-based padding */
     background: none;
     border-radius: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
 }
 
 .graph-container::before {
@@ -47,9 +50,9 @@
 }
 
 .time-interval-selector {
-    padding: 10px 15px;
+    padding: 2% 3%; /* Percentage-based padding */
     font-family: 'Poppins', sans-serif;
-    font-size: 1em;
+    font-size: clamp(0.875rem, 2vw, 1rem); /* Scales with viewport */
     background: rgba(32, 32, 50, 0.4);
     color: #dfe6e9;
     border: none;
@@ -57,12 +60,11 @@
     cursor: pointer;
     transition: background 0.3s ease, border-color 0.3s ease;
     width: 100%;
-    max-width: 200px;
-    margin-left: 40px;
-    /* Space below selector */
+    max-width: 15%; /* Scaled percentage */
+    margin-left: 5%; /* Percentage-based margin */
 }
 
-.time-interval-selector:hover{
+.time-interval-selector:hover {
     background: rgba(56, 56, 94, 0.8);
     outline: none;
 }
@@ -70,6 +72,39 @@
 /* Ensure Plotly fits the container */
 .plotly-graph {
     width: 100%;
-    height: 400px;
-    /* Match Plotly layout height */
+    height: 50vh; /* Percentage-based height */
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .graph-container {
+        width: 95%;
+        padding: 3%;
+    }
+
+    .time-interval-selector {
+        max-width: 50%; /* Wider on mobile */
+        margin-left: 0;
+        margin-top: 2%;
+    }
+
+    .plotly-graph {
+        height: 40vh; /* Smaller height on mobile */
+    }
+}
+
+/* Desktop adjustments */
+@media (min-width: 769px) {
+    .graph-container {
+        width: 90%;
+        max-width: 1000px; /* Caps width for desktop */
+    }
+
+    .time-interval-selector {
+        max-width: 15%;
+    }
+
+    .plotly-graph {
+        height: 50vh;
+    }
 }

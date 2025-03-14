@@ -7,21 +7,25 @@
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 8em;
+    font-size: clamp(4rem, 10vw, 8rem); /* Scales with viewport */
+    width: 100%;
+    text-align: center;
 }
 
 .mainurls {
     display: flex;
     justify-content: space-around;
-    margin-top: 20px;
+    margin-top: 2%; /* Percentage-based margin */
+    width: 100%;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    gap: 2%; /* Adds spacing between cards */
 }
 
 .mainurls .card {
-    width: 30vw;
-    padding: 1rem;
+    width: clamp(20%, 30vw, 35%); /* Scales width */
+    padding: 2%; /* Percentage-based padding */
     backdrop-filter: blur(15px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    /* Combine with shadow */
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 12px;
     background-color: rgba(27, 27, 46, 0.3);
@@ -32,26 +36,25 @@
     box-shadow: #08080a 0px 0px 40px;
 }
 
-
 .mainurls .card .label {
-    font-size: 2em;
+    font-size: clamp(1.5rem, 5vw, 2rem); /* Scales with viewport */
     margin: 0;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 2%;
+    margin-bottom: 2%;
     color: #bd245c;
 }
 
 .mainurls .card .url {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 3%; /* Percentage-based margin */
 }
 
 .url a {
-    font-size: large;
+    font-size: clamp(1rem, 2vw, 1.5rem); /* Scales with viewport */
     text-decoration: none;
     color: #204bb7;
-    padding: 10px;
+    padding: 2%; /* Percentage-based padding */
 }
 
 .clicks {
@@ -59,20 +62,44 @@
     justify-content: center;
     text-align: center;
     flex-direction: column;
+    width: 100%;
 }
 
 .clicks .value {
-    font-size: 10em;
+    font-size: clamp(5rem, 15vw, 10rem); /* Scales with viewport */
     font-family: 'Cabin';
-    font-weight: extra-thin;
+    font-weight: 100; /* 'extra-thin' isn’t standard, using lighter weight */
     color: #94214b;
     margin: 0;
-    margin-top: 10px;
+    margin-top: 2%;
 }
 
 .clicks .label {
-    font-size: 1.2em;
+    font-size: clamp(1rem, 2.5vw, 1.2rem); /* Scales with viewport */
     margin: 0;
-    margin-bottom: 10px;
+    margin-bottom: 2%;
     color: #524b4e;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .mainurls .card {
+        width: 80%; /* Wider on mobile */
+        margin-bottom: 3%; /* Space between stacked cards */
+    }
+
+    .mainurls {
+        gap: 3%; /* Smaller gap */
+    }
+}
+
+/* Desktop adjustments */
+@media (min-width: 769px) {
+    .mainurls .card {
+        width: 30%; /* Slightly narrower on desktop */
+    }
+
+    .mainurls {
+        gap: 2%;
+    }
 }
