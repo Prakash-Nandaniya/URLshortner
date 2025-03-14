@@ -38,25 +38,25 @@ function Unauthenticated() {
                 <h1 className='servicetext'>Signup and get following services in free</h1>
                 <div className="services-section">
                     <div className="mainpagecard mainpagecard-1">
-                        <img src="src/assets/images/links.png" alt="Service 1" className="mainpagecard-image" />
+                        <img src="https://s3.ap-south-1.amazonaws.com/touristsite.moreimages/more_images/Screenshot+from+2025-03-09+19-15-55.png" alt="Service 1" className="mainpagecard-image" />
                         <div className="mainpagecard-overlay">
                             <p>Sign up to shorten multiple URLs for free</p>
                         </div>
                     </div>
                     <div className="mainpagecard mainpagecard-2">
-                        <img src="src/assets/images/piechart.png" alt="Service 2" className="mainpagecard-image" />
+                        <img src="https://s3.ap-south-1.amazonaws.com/touristsite.moreimages/more_images/Screenshot+from+2025-03-09+19-12-42.png" alt="Service 2" className="mainpagecard-image" />
                         <div className="mainpagecard-overlay">
                             <p>Analyze your audience with insightful pie charts</p>
                         </div>
                     </div>
                     <div className="mainpagecard mainpagecard-3">
-                        <img src="src/assets/images/plot.png" alt="Service 3" className="mainpagecard-image" />
+                        <img src="https://s3.ap-south-1.amazonaws.com/touristsite.moreimages/more_images/Screenshot+from+2025-03-09+19-11-38.png" alt="Service 3" className="mainpagecard-image" />
                         <div className="mainpagecard-overlay">
                             <p>Track URL visit trends with detailed plots</p>
                         </div>
                     </div>
                     <div className="mainpagecard mainpagecard-4">
-                        <img src="src/assets/images/map.png" alt="Service 4" className="mainpagecard-image" />
+                        <img src="https://s3.ap-south-1.amazonaws.com/touristsite.moreimages/more_images/Screenshot+from+2025-03-09+19-12-01.png" alt="Service 4" className="mainpagecard-image" />
                         <div className="mainpagecard-overlay">
                             <p>Map your traffic sources geographically</p>
                         </div>
