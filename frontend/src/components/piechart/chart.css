@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 90%; /* Scaled percentage */
+    width: 90%; /* Scales with viewport width */
     max-width: 100%; /* Flexible max-width */
     padding: 3%; /* Percentage-based padding */
     background-color: rgba(13, 14, 29, 0.5);
@@ -20,7 +20,7 @@
 
 .chart-and-legend {
     display: flex;
-    gap: 0;
+    gap: 2%; /* Percentage-based gap */
     width: 100%;
     flex-wrap: wrap; /* Allows wrapping on smaller screens */
 }
@@ -33,7 +33,7 @@
 }
 
 .top-5-list h3 {
-    margin: 0 0 2%;
+    margin: 0 0 2%; /* Percentage-based margin */
     color: #d3d3d3;
     font-size: clamp(1.2rem, 3vw, 1.5rem); /* Scales with viewport */
 }
@@ -67,33 +67,18 @@
 /* Mobile adjustments */
 @media (max-width: 768px) {
     .pie-chart-container {
-        width: 95%;
-        padding: 4%;
+        flex-direction: row;
+        width: 95%; /* Slightly wider on mobile */
+        padding: 4%; /* Slightly more padding on mobile */
     }
 
     .chart-and-legend {
-        flex-direction: column;
         align-items: center;
+        gap: 4%; /* Larger gap for better spacing on mobile */
     }
 
     .top-5-list {
         flex: 0 0 100%; /* Full width on mobile */
-        padding: 3%;
-    }
-}
-
-/* Desktop adjustments */
-@media (min-width: 769px) {
-    .pie-chart-container {
-        width: 90%;
-        max-width: 1000px; /* Caps width for desktop */
-    }
-
-    .chart-and-legend {
-        flex-direction: row;
-    }
-
-    .top-5-list {
-        flex: 0 0 30%;
+        padding: 3%; /* Slightly more padding on mobile */
     }
 }
