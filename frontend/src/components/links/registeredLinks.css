@@ -1,6 +1,8 @@
 .history-container-wrapper {
+  padding-left: 4vw;
+  padding-right: 4vw;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
   position: relative;
   height: 60vh;
@@ -28,7 +30,7 @@
 .history-header-row-container h1 {
   font-family: "Inter", sans-serif;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 1rem;
   color: #c9ced6;
 }
 
@@ -119,7 +121,7 @@
 .history-row-container a {
   font-family: "Inter", sans-serif;
   font-weight: 300;
-  font-size: 14px;
+  font-size: 1rem;
   color: #c9ced6;
   text-decoration: none;
 }
@@ -139,7 +141,7 @@
   padding: 0.5vw;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 1vw;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -177,4 +179,82 @@
 .copySVGreact:active {
   fill: rgb(171, 69, 69);
   transition: fill 0.2s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+  .history-header-row-container h1 {
+    font-size: 0.8rem; /* Keep smaller header text */
+  }
+
+  .history-header-shorturl-container,
+  .history-shorturl-container {
+    flex: 3;
+    align-items: flex-start;
+    width: 30%; /* Increased from 25% with copy button removed */
+    padding: 0.5vw;
+    word-break: break-word; /* URLs wrap to next line */
+    overflow-wrap: break-word; /* Fallback */
+    min-width: 0; /* Prevents flex overflow */
+    margin-right: 1vw;
+  }
+
+  .history-header-originalurl-container,
+  .history-originalurl-container {
+    flex: 3;
+    width: 30%; /* Adjusted from 25% to balance space */
+    padding: 0.5vw;
+    word-break: break-word; /* URLs wrap to next line */
+    overflow-wrap: break-word;
+    min-width: 0; /* Prevents flex overflow */
+  }
+
+  .history-header-clicks,
+  .history-clicks {
+    flex: 1;
+    width: 15%; /* Increased from 10% to use extra space */
+    padding: 0.5vw;
+    min-width: 0;
+  }
+
+  .history-header-buttons {
+    flex: 2;
+    width: 25%; /* Kept same, fits buttons */
+    padding: 0.5vw;
+    display: flex;
+    justify-content: flex-end; /* Keep buttons aligned right */
+    gap: 0.5vw; /* Small gap between buttons */
+  }
+
+  .history-header-shorturl-container {
+    margin-left: 1vw; /* Keep small margin */
+  }
+
+  .history-header-originalurl-container {
+    margin-left: 1vw;
+  }
+
+  .history-header-clicks {
+    margin-left: 1vw;
+  }
+
+  .history-header-buttons {
+    margin-right: 1vw;
+  }
+
+  .history-row-copy-button {
+    display: none; /* Remove copy button on mobile */
+  }
+
+  .history-row-container a {
+    font-size: 0.8rem; /* Smaller text for mobile */
+    word-break: break-word; /* Ensure URLs wrap */
+    overflow-wrap: break-word;
+  }
+
+  .history-info-button button,
+  .history-delete-button button {
+    padding: 0.5vw; /* Keep button padding */
+    font-size: 0.8rem; /* Match text size */
+    max-width: 80px; /* Slightly smaller buttons */
+  }
 }

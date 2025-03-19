@@ -85,7 +85,7 @@ function OneLink({ link, setRegisteredURLs, setStats }) {
           rel="noopener noreferrer"
           onClick={handleShortUrlClick}
         >
-          {short_url}
+          {short_url.length > 30 ? `${short_url.substring(0, 30)}...` : short_url}
         </a>
         <button
           className="history-row-copy-button"
@@ -108,13 +108,8 @@ function OneLink({ link, setRegisteredURLs, setStats }) {
         </button>
       </div>
       <div className="history-originalurl-container">
-        <img
-          className="history-originalurl-image"
-          src={faviconUrl || "https://cdn.oaistatic.com/assets/favicon-o20kmmos.svg"}
-          alt="favicon"
-        />
         <a className="history-originalurl" href={url} target="_blank" rel="noopener noreferrer">
-          {url.length > 40 ? `${url.substring(0, 40)}...` : url}
+          {url.length > 30 ? `${url.substring(0, 30)}...` : url}
         </a>
       </div>
       <div className="history-clicks">

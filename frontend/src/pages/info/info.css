@@ -43,7 +43,7 @@
 }
 
 /* Responsive adjustment */
-@media (max-width: 1200px) {
+@media (max-width: 750px) {
     .pie-chart-grid {
         grid-template-columns: repeat(1, 1fr);
         gap: 3%; /* Smaller gap */
