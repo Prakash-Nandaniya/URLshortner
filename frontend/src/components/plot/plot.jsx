@@ -50,7 +50,9 @@ const PieChart = ({ data }) => {
 
     return Object.values(aggregatedData);
   }, []);
-
+  const chartWidth =  window.innerWidth ;
+  const chartHeight = chartWidth*0.7;
+  const dotsize=chartHeight*0.01;
   // Update plotlyData when data or interval changes
   useEffect(() => {
     const aggregatedData = aggregateTimestampsByInterval(data, plotlyInterval);
@@ -64,11 +66,11 @@ const PieChart = ({ data }) => {
         mode: "lines+markers",
         name: "Clicks over Timeline",
         line: { color: "#EB568E" }, // Pink connecting line
-        marker: { color: "#d50c56", size: 10 }, // Bright pink markers
+        marker: { color: "#d50c56", size: dotsize }, // Bright pink markers
       },
     ]);
   }, [data, plotlyInterval, aggregateTimestampsByInterval]);
-
+ 
   return (
     <div className="abc">
       <div className="graph-container">
@@ -88,11 +90,12 @@ const PieChart = ({ data }) => {
         <Plotly
           data={plotlyData}
           layout={{
-            height: 700,
-            width: 1800,
+            height: chartHeight,
+            width: chartWidth,
             paper_bgcolor: "transparent",
             plot_bgcolor: "transparent",
             font: { color: "#56f556" }, // Green text for axes/titles
+            dragmode: false,
             xaxis: {
               title: {
                 text: "Timeline",

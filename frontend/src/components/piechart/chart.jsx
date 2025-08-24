@@ -45,8 +45,8 @@ const PieChart = ({ data, title, dataKey }) => {
     const processedData = processData(data);
     const chartData = getChartData(processedData);
     const top5 = chartData.slice(0, 5);
-    const chartHeight = window.innerWidth < 600 ? window.innerWidth*0.6 : 500;
-    const chartWidth = window.innerWidth < 600 ? window.innerWidth*0.6 : 500;
+    const chartHeight = window.innerWidth < 600 ? window.innerWidth*0.5 : 500;
+    const chartWidth = window.innerWidth < 600 ? window.innerWidth*0.5 : 500;
 
     // Pie chart data with dull colors and transparency
     const plotlyData = [

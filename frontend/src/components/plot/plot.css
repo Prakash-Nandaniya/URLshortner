@@ -83,7 +83,7 @@
     }
 
     .time-interval-selector {
-        max-width: 50%; /* Wider on mobile */
+        max-width: 50%; 
         margin-left: 0;
         margin-top: 2%;
     }
@@ -93,18 +93,3 @@
     }
 }
 
-/* Desktop adjustments */
-@media (min-width: 769px) {
-    .graph-container {
-        width: 90%;
-        max-width: 1000px; /* Caps width for desktop */
-    }
-
-    .time-interval-selector {
-        max-width: 15%;
-    }
-
-    .plotly-graph {
-        height: 50vh;
-    }
-}
